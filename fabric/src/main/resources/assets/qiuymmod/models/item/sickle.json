@@ -1,0 +1,6 @@
+{
+  "parent": "qiuymmod:displaysettings/liandao_model_item",
+  "textures": {
+    "layer0": "qiuymmod:item/liandao_texture"
+  }
+}

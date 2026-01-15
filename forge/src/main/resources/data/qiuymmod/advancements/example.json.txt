@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "qiuymmod:物品id"
+    },
+    "title": {
+      "translate": "qiuymmod.advancement_id.title"
+    },
+    "description": {
+      "translate": "qiuymmod.advancement_id.description"
+    },
+    "frame": "task"  //task, challenge, goal
+  },
+  "parent": "qiuymmod:父进度id",
+  "criteria": {
+    "criteria_name": {
+      "trigger": "触发器类型",
+      "conditions": {
+      }
+    }
+  },
+  "rewards": {
+    "experience": int,
+    "function": "",
+    "loot": [""],
+    "recipes": [""]
+  }
+}

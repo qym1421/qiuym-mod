@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CC",
+    "CC"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:chicken"
+    }
+  },
+  "result": {
+    "item": "minecraft:egg",
+    "count": 1
+  }
+}

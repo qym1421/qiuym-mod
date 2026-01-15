@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:quartz"
+    },
+    "title": {
+      "translate": "qiuymmod.nether.title"
+    },
+    "description": {
+      "translate": "qiuymmod.nether.description"
+    },
+    "frame": "goal"
+  },
+  "parent": "qiuymmod:root",
+  "criteria": {
+    "nether": {
+      "trigger": "inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["qiuymmod:quartz_ingot"]
+          },
+          {
+            "items": ["qiuymmod:quartz_stick"]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": ["qiuymmod:sickle","qiuymmod:sickle2","qiuymmod:silicon_pickaxe"]
+  }
+}

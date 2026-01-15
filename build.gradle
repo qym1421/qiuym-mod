@@ -1,0 +1,120 @@
+ext {
+    forgeversion = '1.5.1b+mc1.20.1'
+    fabricversion = '1.5+mc1.20.1'
+    minecraftVersion = '1.20.1'
+    modname = 'QiuymMod'
+    id = 'qiuymmod'
+    authorName = 'qiuym'
+    
+    loaderVersionRange = '[47,)'
+}
+
+
+
+allprojects {
+    apply plugin: 'java'
+    
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(17)
+        }
+    }
+}
+
+subprojects {
+    repositories {
+        mavenCentral()
+        maven { url 'https://maven.fabricmc.net/' }
+        maven { url 'https://maven.minecraftforge.net/' }
+    }
+    
+    afterEvaluate {
+        tasks.withType(ProcessResources).configureEach {
+            def expandProps = [
+                "project": [
+                    "name": modname,
+                    "id": id
+                ],
+                "user": [
+                    "name": authorName
+                ],
+                "forgeversion": forgeversion,
+                "fabricversion": fabricversion,
+                "name": project.modname,
+                "modVersion": version,
+                "minecraftVersion": minecraftVersion,
+                "loaderVersion": loaderVersionRange
+            ]
+            
+            filesMatching(['fabric.mod.json', 'META-INF/mods.toml']) {
+                expand expandProps
+            }
+        }
+    }
+}
+
+task buildModules {
+    group = 'build'
+    description = '构建所有模块'
+    
+    dependsOn subprojects*.build
+}
+
+build.dependsOn buildModules
+
+
+assemble.enabled = false
+
+jar {
+    enabled = false
+}
+
+
+
+// 在根项目的 build.gradle 末尾添加
+task cleanDownloadCache {
+    group = 'build'
+    description = '清理 Gradle 下载缓存'
+    
+    doLast {
+        def gradleHome = gradle.gradleUserHomeDir
+        def cacheDirs = [
+            "${gradleHome}/caches/modules-2",
+            "${gradleHome}/caches/forge_gradle",
+            "${gradleHome}/caches/fabric-loom",
+            "${gradleHome}/caches/minecraft",
+            "${gradleHome}/wrapper/dists"
+        ]
+        
+        cacheDirs.each { dir ->
+            def file = file(dir)
+            if (file.exists()) {
+                println "清理: ${file}"
+                delete file
+            }
+        }
+        
+        println "下载缓存清理完成！"
+    }
+}
+
+task cleanAll {
+    group = 'build'
+    description = '彻底清理所有内容'
+    
+    dependsOn clean, ':fabric:clean', ':forge:clean', cleanDownloadCache
+    
+    doLast {
+        // 清理运行目录
+        delete 'run'
+        delete 'out'
+        delete '.gradle/loom-cache'
+        
+        println "=== 彻底清理完成 ==="
+        println "已清理:"
+        println "- 构建输出"
+        println "- 下载缓存"
+        println "- 运行目录"
+        println "- Loom 缓存"
+    }
+}

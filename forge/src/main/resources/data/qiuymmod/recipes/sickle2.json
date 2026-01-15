@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "*@",
+    "* "
+  ],
+  "key": {
+    "#": {
+      "item": "qiuymmod:quartz_ingot"
+    },
+    "@": {
+      "item": "minecraft:nether_star"
+    },
+    "*": {
+      "item": "qiuymmod:quartz_stick"
+    }
+  },
+  "result": {
+    "item": "qiuymmod:sickle",
+    "count": 1
+  }
+}

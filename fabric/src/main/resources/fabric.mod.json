@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "${project.id}",
+  "version": "${fabricversion}",
+  "name": "${project.name}",
+  "description": "Qiuym Mod for Fabric",
+  "authors": ["${user.name}"],
+  "contact": {},
+  "license": "MIT",
+  "icon": "logo.png",
+  "environment": "*",
+  "contact": {
+    "homepage": "https://modrinth.com/mod/qiuymmod"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.modrinth": "https://modrinth.com/mod/qiuymmod"
+      }
+    }
+  },
+  "entrypoints": {
+    "main": ["com.qiuym.fabricqiuymmod.QiuymModFabric"]
+  },
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "fabric": "*",
+    "minecraft": "${minecraftVersion}",
+    "java": ">=17",
+    "geckolib": ">=4"
+  }
+}

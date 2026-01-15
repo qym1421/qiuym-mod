@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Created-By: Qiuym
+Specification-Title: QiuymMod
+Specification-Vendor: qiuym
+Specification-Version: 1.0.0
+Implementation-Title: QiuymMod
+Implementation-Version: 1.0.0
+Implementation-Vendor: qiuym
+Main-Class: com.qiuym.qiuymmod.QiuymMod
+

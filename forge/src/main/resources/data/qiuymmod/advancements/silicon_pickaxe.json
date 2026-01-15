@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "qiuymmod:silicon_pickaxe"
+    },
+    "title": {
+      "translate": "qiuymmod.2.title"
+    },
+    "description": {
+      "translate": "qiuymmod.2.description"
+    },
+    "frame": "challenge"
+  },
+  "parent": "qiuymmod:nether",
+  "criteria": {
+    "silicon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["qiuymmod:silicon_pickaxe"]
+          }
+        ]
+      }
+    }
+  }
+}

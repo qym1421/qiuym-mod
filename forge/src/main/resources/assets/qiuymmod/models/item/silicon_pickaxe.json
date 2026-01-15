@@ -1,0 +1,7 @@
+{
+  "parent": "qiuymmod:custom/honkai_pickaxe",
+  "textures": {
+    "0": "qiuymmod:block/silicon_pickaxe",
+    "particle": "qiuymmod:item/silicon_pickaxe"
+  }
+}

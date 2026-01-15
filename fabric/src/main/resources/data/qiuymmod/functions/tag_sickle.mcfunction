@@ -1,0 +1,1 @@
+execute as @a[nbt={SelectedItem:{id:"qiuymmod:sickle",Count:1b}}] run tag @s add has_sickle

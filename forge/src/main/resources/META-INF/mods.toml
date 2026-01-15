@@ -1,0 +1,62 @@
+modLoader = "javafml"
+loaderVersion = "${loaderVersion}"
+license = "MIT"
+logoFile = "logo.png"
+
+[[mods]]
+modId = "${project.id}"
+version = "${forgeversion}"
+displayName = "${project.name}"
+authors = "${user.name}"
+description = " This is a minecraft forge mod for ${minecraftVersion}."
+displayURL = "https://modrinth.com/mod/qiuymmod"
+
+
+[[dependencies.qiuymmod]]
+modId="minecraft"
+mandatory=true
+versionRange="${minecraftVersion}"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.qiuymmod]]
+modId = "forge"
+versionRange = "${loaderVersion}"
+mandatory = true
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.qiuymmod]]
+modId = "geckolib"
+versionRange = "[4.0,)"
+mandatory = true
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.qiuymmod]]
+modId = "bettercombat"
+versionRange = "[0,)"
+mandatory = false
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.qiuymmod]]
+modId = "playeranimator"
+versionRange = "[0,)"
+mandatory = false
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.qiuymmod]]
+modId = "cloth_config"
+versionRange = "[0,)"
+mandatory = false
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.qiuymmod]]
+modId = "colorfulhearts"
+versionRange = "[0,)"
+mandatory = false
+ordering = "AFTER"
+side = "BOTH"

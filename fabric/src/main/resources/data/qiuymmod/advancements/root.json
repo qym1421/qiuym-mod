@@ -1,0 +1,22 @@
+{
+  "display": {
+    "background": "qiuymmod:background",
+    "icon": {
+      "item": "qiuymmod:sickle"
+    },
+    "title": {"translate": "advancements.qiuymmod.root.title"},
+    "description": {"translate": "advancements.qiuymmod.root.description"},
+    "frame": "task"
+  },
+  "criteria": {
+    "qiuymroot": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "minecraft:the_nether"
+      }
+    }
+  },
+  "rewards": {
+    "recipes": ["qiuymmod:quartz_ingot","qiuymmod:quartz_stick"]
+  }
+}

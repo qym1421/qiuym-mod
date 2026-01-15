@@ -1,0 +1,93 @@
+{
+  "criteria": {
+    // 1. 物品栏变化
+    "example1": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["命名空间:物品id"],
+            "count": 1,  // 数量
+            "nbt": "{}"  // NBT数据
+          }
+        ]
+      }
+    },
+    
+    // 2. 合成物品
+    "example2": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "命名空间:配方id"
+      }
+    },
+    
+    // 3. 击杀实体
+    "example3": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:实体类型",
+          "nbt": "{}"
+        }
+      }
+    },
+    
+    // 4. 进入维度
+    "example4": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "命名空间:维度id"
+      }
+    },
+    
+    // 5. 使用物品
+    "example5": {
+      "trigger": "minecraft:item_durability_changed",
+      "conditions": {
+        "item": "命名空间:物品id",
+        "durability": 0
+      }
+    },
+    
+    // 6. 放置方块
+    "example6": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "命名空间:方块id"
+      }
+    },
+    
+    // 7. 破坏方块
+    "example7": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "block": {
+          "blocks": ["命名空间:方块id"],
+          "state": {}  // 方块状态
+        }
+      }
+    },
+    
+    // 8. 获得效果
+    "example8": {
+      "trigger": "minecraft:effects_changed",
+      "conditions": {
+        "effects": {
+          "命名空间:效果id": {}
+        }
+      }
+    },
+    
+    // 9. 完成进度
+    "example9": {
+      "trigger": "minecraft:impossible"  // 永远无法完成，用于隐藏进度
+    },
+    
+    // 10. 自定义触发器（Forge模组）
+    "example10": {
+      "trigger": "命名空间:自定义触发器id",
+      "conditions": {}
+    }
+  }
+}

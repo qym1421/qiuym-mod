@@ -1,0 +1,67 @@
+package com.qiuym.qiuymmod.item.materials;
+
+import java.util.*;
+import java.util.stream.*;
+import net.minecraft.world.item.*;
+import net.minecraft.sounds.*;
+import net.minecraft.world.item.crafting.*;
+
+public class ErrorMaterial implements ArmorMaterial {
+    // 1. 耐久度（不同部位不同值）
+    @Override
+    public int m_266425_(ArmorItem.Type type) {
+        return switch(type) {
+            case HELMET -> 0;      // 头盔
+            case CHESTPLATE -> 0;  // 胸甲
+            case LEGGINGS -> 0;    // 护腿
+            case BOOTS -> 0;        // 靴子
+        };
+    }
+    
+    // 2. 护甲值
+    @Override
+    public int m_7366_(ArmorItem.Type type) {
+        return switch(type) {
+            case HELMET -> 3;
+            case CHESTPLATE -> 5;
+            case LEGGINGS -> 4;
+            case BOOTS -> 1;
+        };
+    }
+    
+    // 3. 附魔能力
+    @Override
+    public int m_6646_() {
+        return 15;
+    }
+    
+    // 4. 装备音效
+    @Override
+    public SoundEvent m_7344_() {
+        return null;
+    }
+    
+    // 5. 修复材料（无法修复就返回空）
+    @Override
+    public Ingredient m_6230_() {
+        return null;
+    }
+    
+    // 6. 材质名称（重要！决定纹理路径）
+    @Override
+    public String m_6082_() {
+        return "error";  // 对应 assets/qiuymmod/textures/models/armor/error_layer_1.png
+    }
+    
+    // 7. 韧性
+    @Override
+    public float m_6649_() {
+        return 0.0F;
+    }
+    
+    // 8. 击退抗性
+    @Override
+    public float m_6651_() {
+        return 0.0F;
+    }
+}

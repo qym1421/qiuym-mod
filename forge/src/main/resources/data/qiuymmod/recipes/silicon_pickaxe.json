@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ini",
+    " # ",
+    " # "
+  ],
+  "key": {
+    "i": { "item": "qiuymmod:quartz_ingot"},
+    "#": { "item": "qiuymmod:quartz_stick"},
+    "n": { "item": "minecraft:nether_star"}
+  },
+  "result": {
+    "item": "qiuymmod:silicon_pickaxe",
+    "count": 1
+  }
+}

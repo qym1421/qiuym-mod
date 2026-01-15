@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "QQ",
+    "QQ"
+  ],
+  "key": {
+    "Q": {
+      "item": "qiuymmod:quartz_powder"
+    }
+  },
+  "result": {
+    "item": "qiuymmod:quartz_ingot",
+    "count": 1
+  }
+}

@@ -1,0 +1,39 @@
+package com.qiuym.qiuymmod.item;
+
+import java.util.*;
+import com.google.common.collect.ImmutableMultimap;
+import com.google.common.collect.Multimap;
+import com.qiuym.qiuymmod.item.materials.*;
+import net.minecraft.world.entity.*;
+import net.minecraft.world.item.*;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+
+public class ErrorHelmet extends ArmorItem {
+    public ErrorHelmet(Item.Properties properties) {
+        super(
+            new ErrorMaterial(),
+            ArmorItem.Type.HELMET,
+            properties
+            .m_41486_()
+            .m_41487_(1)
+            .m_41497_(Rarity.EPIC)
+        );
+    }
+    @Override
+    public Multimap<Attribute, AttributeModifier> m_7167_(EquipmentSlot equipmentSlot) {
+        if (equipmentSlot == EquipmentSlot.HEAD) {
+            ImmutableMultimap.Builder builder = ImmutableMultimap.builder();
+            builder.putAll(super.m_7167_(equipmentSlot));
+            builder.put((Object)Attributes.f_22276_, (Object)new AttributeModifier(UUID.randomUUID(), "Item modifier", 200.0, AttributeModifier.Operation.ADDITION));
+            builder.put((Object)Attributes.f_22278_, (Object)new AttributeModifier(UUID.randomUUID(), "Item modifier", 1.0, AttributeModifier.Operation.ADDITION));
+            builder.put((Object)Attributes.f_22279_, (Object)new AttributeModifier(UUID.randomUUID(), "Item modifier", 0.5, AttributeModifier.Operation.ADDITION));
+            builder.put((Object)Attributes.f_22280_, (Object)new AttributeModifier(UUID.randomUUID(), "Item modifier", 0.5, AttributeModifier.Operation.ADDITION));
+            builder.put((Object)Attributes.f_22284_, (Object)new AttributeModifier(UUID.randomUUID(), "Item modifier", 30.0, AttributeModifier.Operation.ADDITION));
+            builder.put((Object)Attributes.f_22285_, (Object)new AttributeModifier(UUID.randomUUID(), "Item modifier", 20.0, AttributeModifier.Operation.ADDITION));
+            return builder.build();
+        }
+        return super.m_7167_(equipmentSlot);
+    }
+}

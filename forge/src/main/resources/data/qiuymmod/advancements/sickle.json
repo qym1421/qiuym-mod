@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "qiuymmod:sickle"
+    },
+    "title": {
+      "translate": "qiuymmod.sickle.title"
+    },
+    "description": {
+      "translate": "qiuymmod.sickle.description"
+    },
+    "frame": "challenge"
+  },
+  "parent": "qiuymmod:nether",
+  "criteria": {
+    "sickle": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["qiuymmod:sickle"]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "item.qiuymmod.errorhelmet": "§4§k00000000",
+  "item.qiuymmod.sickle": "§5§k000§r§5§l崩坏§r§r§5§k000",
+  "item.qiuymmod.silicon_pickaxe": "§5§k000§r§5结晶§r§5§k000",
+  "itemGroup.qiuymmod": "§5§lQiuym Mod",
+  "advancements.qiuymmod.root.title": "§5Qiuym Mod",
+  "advancements.qiuymmod.root.description": "进入下界开始探索QiuymMod",
+  "qiuymmod.sickle.title": "§6半神!",
+  "qiuymmod.sickle.description": "合成Sickle",
+  "qiuymmod.2.title": "§6神速!",
+  "qiuymmod.2.description": "合成siliconPickaxe",
+  "qiuymmod.beef.title": "好吃的牛肉!",
+  "qiuymmod.beef.description": "杀死一头牛",
+  "item.qiuymmod.quartz_stick": "石英合金棒",
+  "item.qiuymmod.quartz_ingot": "石英合金锭",
+  "qiuymmod.nether.title": "下界之旅",
+  "qiuymmod.nether.description": "获得下界合金锭与石英,合成石英合金制品!",
+  "item.qiuymmod.quartz_powder": "石英合金粉",
+  "block.qiuymmod.quartz_ore": "石英合金矿石"
+}
