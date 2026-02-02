@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-      "layer0": "qiuymmod:item/error_helmet"
+      "layer0": "qiuymmod:background"
     }
 }

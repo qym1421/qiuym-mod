@@ -16,5 +16,8 @@
   "qiuymmod.nether.title": "下界之旅",
   "qiuymmod.nether.description": "获得下界合金锭与石英,合成石英合金制品!",
   "item.qiuymmod.quartz_powder": "石英合金粉",
-  "block.qiuymmod.quartz_ore": "石英合金矿石"
+  "block.qiuymmod.quartz_ore": "石英合金矿石",
+  "entity.qiuymmod.error_wither": "§4§k00000000",
+  "item.qiuymmod.error_wither_spawn_egg":"§4§k00000000",
+  "item.qiuymmod.error_star": "§4§k00000000"
 }

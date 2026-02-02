@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "eee",
+    "e e"
+  ],
+  "key": {
+    "e": {
+      "item": "qiuymmod:error_star"
+    }
+  },
+  "result": {
+    "item": "qiuymmod:errorhelmet",
+    "count": 1
+  }
+}

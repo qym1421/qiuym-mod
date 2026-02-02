@@ -16,5 +16,9 @@
   "qiuymmod.nether.title": "Nether Journey",
   "qiuymmod.nether.description": "Obtain Netherite and Quartz, craft Quartz Alloy products!",
   "item.qiuymmod.quartz_powder": "Quartz Powder",
-  "item.qiuymmod.quartz_ore": "Quartz Ore"
+  "item.qiuymmod.quartz_ore": "Quartz Ore",
+  "entity.qiuymmod.error_wither": "§4§k00000000",
+  "entity.qiuymmod.error_wither": "§4§k00000000",
+  "item.qiuymmod.error_wither_spawn_egg":"§4§k00000000",
+  "item.qiuymmod.error_star": "§4§k00000000"
 }

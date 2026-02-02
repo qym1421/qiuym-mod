@@ -1,10 +1,10 @@
 public class CLASS extends Item {
     public CLASS(Item.Properties properties) {
         super(properties
-            .m_41486_()
-            .m_41487_(1)    //设置最大堆叠数
-            //.m_41503_()    //设置耐久度
-            .m_41497_(Rarity.EPIC)
+            .fireResistant()
+            .stacksTo(1)
+            .durability(0)
+            .rarity(Rarity.EPIC)
         );
     }
 }

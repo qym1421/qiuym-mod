@@ -18,7 +18,9 @@ public class Tab {
                 output.accept(new ItemStack(QiuymModItem.QUARTZ_INGOT.get()));
                 output.accept(new ItemStack(QiuymModItem.QUARTZ_POWDER.get()));
                 output.accept(new ItemStack(QiuymModItem.QUARTZ_ORE.get()));
-                //output.accept(new ItemStack(QiuymModItem.ERRORHELMET.get()));
+                output.accept(new ItemStack(QiuymModItem.ERRORHELMET.get()));
+                output.accept(new ItemStack(QiuymModItem.ERROR_STAR.get()));
+                output.accept(new ItemStack(QiuymModItem.ERROR_WITHER_SPAWN_EGG.get()));
             })
             .build();
     }
