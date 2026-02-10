@@ -1,5 +1,5 @@
 ext {
-    forgeversion = '1.5.3+mc1.20.1'
+    forgeversion = '1.5.4beta+mc1.20.1'
     fabricversion = '1.5+mc1.20.1'
     minecraftVersion = '1.20.1'
     modname = 'QiuymMod'
