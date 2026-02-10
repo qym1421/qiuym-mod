@@ -1,4 +1,4 @@
-The latest version is 1.5.3
+The latest version is 1.5.4beta
 
 # modrinth.com
 https://modrinth.com/mod/qiuymmod
