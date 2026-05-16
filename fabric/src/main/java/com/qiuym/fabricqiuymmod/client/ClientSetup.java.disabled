@@ -1,0 +1,25 @@
+package com.qiuym.fabricqiuymmod.client;
+
+import com.qiuym.fabricqiuymmod.QiuymModFabric;
+import com.qiuym.fabricqiuymmod.client.renderer.ErrorWitherRenderer;
+import com.qiuym.fabricqiuymmod.client.renderer.ErrorWitherSkullRenderer;
+import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.entity.player.PlayerEntity;
+
+public class ClientSetup implements ClientModInitializer {
+    
+    @Override
+    public void onInitializeClient() {
+        // 使用 lambda 表达式明确指定类型
+        EntityRendererRegistry.register(QiuymModFabric.ERROR_WITHER, 
+            (context) -> new ErrorWitherRenderer(context));
+        EntityRendererRegistry.register(QiuymModFabric.ERROR_WITHER_SKULL, 
+            (context) -> new ErrorWitherSkullRenderer(context));
+    }
+    
+    public static PlayerEntity getClientPlayer() {
+        return MinecraftClient.getInstance().player;
+    }
+}

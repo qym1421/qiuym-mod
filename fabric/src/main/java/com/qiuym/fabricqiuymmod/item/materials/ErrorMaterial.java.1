@@ -1,0 +1,54 @@
+package com.qiuym.fabricqiuymmod.item.materials;
+
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.ArmorMaterial;
+import net.minecraft.recipe.Ingredient;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
+import com.qiuym.fabricqiuymmod.QiuymModFabric;
+
+public class ErrorMaterial implements ArmorMaterial {
+    
+    private static final int[] BASE_DURABILITY = new int[] { 0, 0, 0, 0 };  // 头盔、胸甲、护腿、靴子
+    private static final int[] PROTECTION_AMOUNTS = new int[] { 0, 0, 0, 0 };  // 基础保护值
+
+    @Override
+    public int getDurability(ArmorItem.Type type) {
+        return 0;  // 无限耐久
+    }
+
+    @Override
+    public int getProtection(ArmorItem.Type type) {
+        return 0;  // 基础保护值设为0，我们用自定义属性
+    }
+
+    @Override
+    public int getEnchantability() {
+        return 30;  // 高附魔能力
+    }
+
+    @Override
+    public SoundEvent getEquipSound() {
+        return SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE;  // 下界合金装备声音
+    }
+
+    @Override
+    public Ingredient getRepairIngredient() {
+        return Ingredient.ofItems(QiuymModFabric.ERROR_STAR);  // 用你的错误之星修复
+    }
+
+    @Override
+    public String getName() {
+        return "error";  // 材质名称
+    }
+
+    @Override
+    public float getToughness() {
+        return 0.0F;  // 我们用自定义属性
+    }
+
+    @Override
+    public float getKnockbackResistance() {
+        return 0.0F;  // 我们用自定义属性
+    }
+}

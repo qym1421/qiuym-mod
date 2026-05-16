@@ -1,0 +1,24 @@
+package com.qiuym.fabricqiuymmod.client.renderer;
+
+import com.qiuym.fabricqiuymmod.QiuymModFabric;
+import com.qiuym.fabricqiuymmod.entity.ErrorWither;
+import net.minecraft.client.render.entity.EntityRendererFactory;
+import net.minecraft.client.render.entity.MobEntityRenderer;
+import net.minecraft.client.render.entity.model.WitherEntityModel;
+import net.minecraft.client.render.entity.model.EntityModelLayers;
+import net.minecraft.util.Identifier;
+
+public class ErrorWitherRenderer extends MobEntityRenderer<ErrorWither, WitherEntityModel<ErrorWither>> {
+    
+    private static final Identifier TEXTURE = 
+        new Identifier(QiuymModFabric.MODID, "textures/entity/error_wither.png");
+    
+    public ErrorWitherRenderer(EntityRendererFactory.Context context) {
+        super(context, new WitherEntityModel<>(context.getPart(EntityModelLayers.WITHER)), 1.0F);
+    }
+    
+    @Override
+    public Identifier getTexture(ErrorWither entity) {
+        return TEXTURE;
+    }
+}

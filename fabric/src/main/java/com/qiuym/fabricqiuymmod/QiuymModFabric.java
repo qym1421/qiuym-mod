@@ -4,9 +4,7 @@ import com.qiuym.fabricqiuymmod.item.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
@@ -20,6 +18,7 @@ public class QiuymModFabric implements ModInitializer {
     public static Item SILICON_PICKAXE;
     public static Item QUARTZ_STICK;
     public static Item QUARTZ_INGOT;
+    public static ArmorItem ERRORHELMET;
     
     // 创造模式标签页
     public static final ItemGroup QIUYMMOD_TAB = FabricItemGroup.builder()
@@ -43,6 +42,7 @@ public class QiuymModFabric implements ModInitializer {
             content.add(SILICON_PICKAXE);
             content.add(QUARTZ_STICK);
             content.add(QUARTZ_INGOT);
+            content.add(ERRORHELMET);
         });
         
         System.out.println("Qiuym Mod initialized successfully!");
@@ -68,6 +68,11 @@ public class QiuymModFabric implements ModInitializer {
         QUARTZ_INGOT = Registry.register(Registries.ITEM, 
             new Identifier(MODID, "quartz_ingot"), 
             new QuartzIngot(new Item.Settings().maxCount(64).rarity(net.minecraft.util.Rarity.UNCOMMON).fireproof())
+        );
+        
+        ERRORHELMET = Registry.register(Registries.ITEM, 
+            new Identifier(MODID, "errorhelmet"), 
+            new ErrorHelmet()
         );
         
         System.out.println("Items registered successfully");

@@ -1,0 +1,30 @@
+package com.qiuym.fabricqiuymmod.entity;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.projectile.WitherSkullEntity;
+import net.minecraft.world.World;
+import net.minecraft.util.hit.EntityHitResult;
+import net.minecraft.util.hit.HitResult;
+
+public class ErrorWitherSkull extends WitherSkullEntity {
+
+    // 必须要有
+    public ErrorWitherSkull(EntityType<? extends WitherSkullEntity> type, World world) {
+        super(type, world);
+    }
+
+    // 发射用
+    public ErrorWitherSkull(World world, LivingEntity shooter, double dx, double dy, double dz) {
+        super(world, shooter, dx, dy, dz);
+    }
+
+    @Override
+    protected void onCollision(HitResult hitResult) {
+        super.onCollision(hitResult);
+        if (!getWorld().isClient) {
+            discard();
+        }
+    }
+}

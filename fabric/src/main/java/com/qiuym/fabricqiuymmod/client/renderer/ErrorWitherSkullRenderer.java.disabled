@@ -1,0 +1,19 @@
+package com.qiuym.fabricqiuymmod.client.renderer;
+
+import com.qiuym.fabricqiuymmod.entity.ErrorWitherSkull;
+import net.minecraft.client.render.entity.EntityRendererFactory;
+import net.minecraft.client.render.entity.WitherSkullEntityRenderer;
+import net.minecraft.util.Identifier;
+
+public class ErrorWitherSkullRenderer extends WitherSkullEntityRenderer {
+
+    private static final Identifier TEXTURE = new Identifier("qiuymmod", "textures/entity/error_wither_skull.png");
+
+    public ErrorWitherSkullRenderer(EntityRendererFactory.Context ctx) {
+        super(ctx);
+    }
+
+    public Identifier getTexture(ErrorWitherSkull entity) {
+        return TEXTURE;
+    }
+}

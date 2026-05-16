@@ -1,6 +1,6 @@
 ext {
     forgeversion = '1.5.4beta+mc1.20.1'
-    fabricversion = '1.5+mc1.20.1'
+    fabricversion = '1.5.3beta+mc1.20.1'
     minecraftVersion = '1.20.1'
     modname = 'QiuymMod'
     id = 'qiuymmod'
@@ -24,8 +24,6 @@ allprojects {
 subprojects {
     repositories {
         mavenCentral()
-        maven { url 'https://maven.fabricmc.net/' }
-        maven { url 'https://maven.minecraftforge.net/' }
     }
     
     afterEvaluate {
@@ -77,20 +75,18 @@ task cleanDownloadCache {
     description = '清理 Gradle 下载缓存'
     
     doLast {
-        def gradleHome = gradle.gradleUserHomeDir
+        def gradleHome = "../.gradle"
         def cacheDirs = [
             "${gradleHome}/caches/modules-2",
             "${gradleHome}/caches/forge_gradle",
             "${gradleHome}/caches/fabric-loom",
-            "${gradleHome}/caches/minecraft",
-            "${gradleHome}/wrapper/dists"
+            "${gradleHome}/caches/minecraft"
         ]
-        
         cacheDirs.each { dir ->
-            def file = file(dir)
-            if (file.exists()) {
-                println "清理: ${file}"
-                delete file
+            def cacheFile = new File(dir)  // 直接使用 File 构造函数，而不是 file() 方法
+            if (cacheFile.exists()) {
+                println "清理: ${cacheFile}"
+                cacheFile.deleteDir()  // 使用 deleteDir() 方法
             }
         }
         
@@ -102,13 +98,13 @@ task cleanAll {
     group = 'build'
     description = '彻底清理所有内容'
     
-    dependsOn clean, ':fabric:clean', ':forge:clean', cleanDownloadCache
+    dependsOn clean/*, ':fabric:clean'*/, ':forge:clean', cleanDownloadCache
     
     doLast {
         // 清理运行目录
-        delete 'run'
-        delete 'out'
-        delete '.gradle/loom-cache'
+        // delete 'run'
+        // delete 'out'
+        // delete '.gradle/loom-cache'
         
         println "=== 彻底清理完成 ==="
         println "已清理:"

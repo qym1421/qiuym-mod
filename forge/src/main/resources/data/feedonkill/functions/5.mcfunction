@@ -1,1 +1,0 @@
-scoreboard players set @a[scores={kills=6..}] kills 5

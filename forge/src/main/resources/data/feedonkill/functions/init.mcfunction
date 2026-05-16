@@ -1,1 +1,0 @@
-tellraw @a {"text":"已加载击杀回复饱食度数据包!","color":"green"}

@@ -1,0 +1,72 @@
+package com.qiuym.fabricqiuymmod.entity;
+
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.DefaultAttributeContainer;
+import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.boss.WitherEntity;
+import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+import net.minecraft.util.math.Vec3d;
+import com.qiuym.fabricqiuymmod.QiuymModFabric;
+
+public class ErrorWither extends WitherEntity {
+    
+    public ErrorWither(EntityType<? extends WitherEntity> entityType, World world) {
+        super(entityType, world);
+    }
+    
+    @Override
+    public void tick() {
+        super.tick();
+        
+        if (this.getWorld().isClient) return;
+        
+        LivingEntity target = this.getTarget();
+        if (target != null && this.age % 20 == 0) {  // 每秒发射
+            double dx = target.getX() - this.getX();
+            double dy = target.getEyeY() - this.getEyeY();
+            double dz = target.getZ() - this.getZ();
+            
+            shootSkull(dx, dy, dz);
+        }
+    }
+    
+    private void shootSkull(double dx, double dy, double dz) {
+        // 就用你原来的、最简单的构造！
+        ErrorWitherSkull skull = new ErrorWitherSkull(
+            this.getWorld(),
+            this,
+            dx, dy, dz
+        );
+    
+        Vec3d look = this.getRotationVec(1.0f);
+        skull.setPosition(
+            this.getX() + look.x * 1.5,
+            this.getEyeY() - 0.2,
+            this.getZ() + look.z * 1.5
+        );
+    
+        this.getWorld().spawnEntity(skull);
+    }
+    
+    @Override
+    protected void dropLoot(DamageSource damageSource, boolean bl) {
+        super.dropLoot(damageSource, bl);
+        
+        if (!this.getWorld().isClient) {
+            ItemStack errorStar = new ItemStack(QiuymModFabric.ERROR_STAR);
+            this.dropStack(errorStar);
+        }
+    }
+    
+    public static DefaultAttributeContainer createAttributes() {
+        return WitherEntity.createWitherAttributes()  // Yarn 映射是 createWitherAttributes
+            .add(EntityAttributes.GENERIC_MAX_HEALTH, 600.0D)
+            .add(EntityAttributes.GENERIC_ARMOR, 6.0D)
+            .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.6D)
+            .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 16.0D)
+            .build();
+    }
+}
