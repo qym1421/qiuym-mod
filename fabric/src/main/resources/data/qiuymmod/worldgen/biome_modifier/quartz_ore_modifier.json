@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:add_feature",
+  "biomes": "#minecraft:is_nether",
+  "features": ["qiuymmod:quartz_ore"],
+  "step": "underground_ores"
+}
